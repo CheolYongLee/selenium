@@ -19,3 +19,8 @@ def X_path_clear(X_path):  # 초기화 하고자 하는 text box의 xpath 입력
 
 X_path_input('//*[@id="query"]', 'facebook') # xpath를 이용하여 네이버 홉의 검색창에 겁색어 입력
 class_btn_click('btn_submit') # class name을 이용하여 네이버 홉의 검색 버튼 클릭
+
+# 검색 후 다른내용 재검색
+X_path_clear('//*[@id="nx_query"]') # 네이버 검색 창 초기화
+X_path_input('//*[@id="nx_query"]', 'instagram') # 홈 페이지가 아닌 검색 실행한 페이지에서 instagram 검색
+class_btn_click('bt_search') # 검색 버튼 클릭
