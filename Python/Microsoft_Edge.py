@@ -5,6 +5,11 @@ browser = webdriver.Edge('C:/Users/Administrator/selenium/edgedriver/msedgedrive
 
 browser.get("http://www.naver.com") # 사이트 주소를 입력하여 웹 페이지 접속
 
+# 인터넷 창 크기 변경
+browser.maximize_window() # 최대화
+# browser.minimize_window() # 최소화
+# browser.set_window_size(1920, 1280) # 지정 사이즈로 변경
+
 # xpath를 이용한 검색어 입력
 def X_path_input(X_path, key):  # X_path는 입력 창 경로, key는 입력할 input 값
     browser.find_element_by_xpath(X_path).send_keys(key)
