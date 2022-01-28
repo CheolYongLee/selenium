@@ -5,6 +5,17 @@ browser = webdriver.Edge('C:/Users/Administrator/selenium/edgedriver/msedgedrive
 
 browser.get("http://www.naver.com") # 사이트 주소를 입력하여 웹 페이지 접속
 
-search_input = browser.find_element_by_xpath('//*[@id="query"]').send_keys('facebook') # xpath를 이용하여 네이버 홉의 검색창에 겁색어 입력
+# xpath를 이용한 검색어 입력
+def X_path_input(X_path, key):  # X_path는 입력 창 경로, key는 입력할 input 값
+    browser.find_element_by_xpath(X_path).send_keys(key)
 
-search_btn = browser.find_element_by_class_name("btn_submit").click() # class name을 이용하여 네이버 홉의 검색 버튼 클릭
+# class name을 이용한 버튼 클릭
+def class_btn_click(class_name):  # 클릭하고자 하는 대상의 class name 입력
+    browser.find_element_by_class_name(class_name).click()
+
+# input 초기화
+def X_path_clear(X_path):  # 초기화 하고자 하는 text box의 xpath 입력
+    browser.find_element_by_xpath(X_path).clear()
+
+X_path_input('//*[@id="query"]', 'facebook') # xpath를 이용하여 네이버 홉의 검색창에 겁색어 입력
+class_btn_click('btn_submit') # class name을 이용하여 네이버 홉의 검색 버튼 클릭
