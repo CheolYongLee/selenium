@@ -1,4 +1,5 @@
 from selenium import webdriver
+from time import sleep
 
 
 driver = webdriver.Edge('C:/Users/Administrator/selenium/edgedriver/msedgedriver.exe') # 다운받은 웹 드라이버 경로 지정
